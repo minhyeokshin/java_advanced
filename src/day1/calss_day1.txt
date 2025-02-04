@@ -77,3 +77,22 @@ Cat 객체를 생성하고 이것을 Animal 변수에 대입하세요.
 Abstract 사전적의미 : 실체 간에 공통되는 특성을 추출 한 것
 이 클래스들의 공통적인 필드나 메소드를 추출해서 선언한 클래스를 추상 클래스
 추상클래스는 실체 클래스들의 부모 역할
+
+#봉인된(sealed) 클래스
+    기본적으로 final클래스를 제외한 모든 클래스는 부모클래스가 될 수 있다.
+    Java15부터 무분별한 자식 클래스 생성을 방지하기 위해 도입됨
+
+    public sealed class Person permits Employee,Manager{...}
+    final은 더 이상 상속 할 수없다.
+    public final class Employee extends Person{...}
+    또는
+    public non-sealed class Manager extends Person{...}
+    봉인을 해제한다. Manager 클래스는 자식클래스를 만들 수 있다.
+    public class Director extends Manager{...}
+
+      -> Person클래스는 Employee,Manager클래스만 자식클래수로 둘 수 있다.
+
+      sealed 키워드를 사용하면 permits 키워드 뒤에 상속 가능한 자식 클래스를 지정한다.
+
+
+

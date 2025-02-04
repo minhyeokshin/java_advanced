@@ -13,14 +13,8 @@ public class Circle extends Shape{
     }
 
     @Override
-    public void Shape(String name) {
-        this.name = name;
-    }
-
-    @Override
     public void calculationArea() {
         System.out.println(Math.PI * radius * radius);
-
     }
 
     @Override

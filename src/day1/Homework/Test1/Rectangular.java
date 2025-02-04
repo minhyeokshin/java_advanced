@@ -21,10 +21,6 @@ public class Rectangular extends Shape{
         this.hight = hight;
     }
 
-    @Override
-    public void Shape(String name) {
-        this.name = name;
-    }
 
     @Override
     public void calculationArea() {
