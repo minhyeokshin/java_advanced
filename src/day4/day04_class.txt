@@ -1,0 +1,8 @@
+1.인터페이스 상속
+    인터페이스는 다른 인터페이스를 상속할 수 있다.
+    다중상속을 허용한다.
+
+    //interface끼리 상속
+    public interface babyinterface extends mamainterface , fafainterface{...}
+    //구현 클래스
+    public class baby implements babyinterface{...}

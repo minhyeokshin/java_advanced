@@ -5,7 +5,7 @@ public class DriverMain {
         Driver driver = new Driver();
 
         Bus bus = new Bus();
-        driver.drive(bus);
+        driver.drive(new Bus());
 
         Taxi taxi = new Taxi();
         driver.drive(taxi);
