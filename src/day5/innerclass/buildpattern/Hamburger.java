@@ -7,9 +7,7 @@ import lombok.Getter;
 //실습 : 필수사항에 세트는 반드시 음료가 포함되는 햄버거 셋트이다.
 //음료가 포함되어 있는 햄버거를 만들어 주세요.
 //치킨버거(토핑 : 치즈,야채,베이컨 ) + 콜라 세트 메뉴 생성
-@Builder
 @Data
-@Getter
 public class Hamburger {
     //필수 멤버
     private String bun;
@@ -24,7 +22,7 @@ public class Hamburger {
     private boolean bacon;
 
 
-    private Hamburger(BurgerBuilder builder) {
+        private Hamburger(BurgerBuilder builder) {
         this.bun = builder.bun;
         this.patty = builder.patty;
         this.Vegetable = builder.Vegetable;
