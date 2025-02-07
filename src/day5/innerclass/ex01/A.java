@@ -1,4 +1,4 @@
-package day5.innerclass;
+package day5.innerclass.ex01;
 
 public class A {
     //인스턴스 멤버클래스
