@@ -1,0 +1,14 @@
+Object 클래스
+    - boolean equals(Object obj)
+        객체 동등 비교 시 equals()사용
+        객체의 주소값을 비교하고 boolean(true/false) 값을 리턴
+    - int hashcode()
+        객체 해시코드란 객체를 식별하는 정수를 의미함.
+        Object 클래스의 hashcode() 객체의 메모리 번지(주소값)을 이용해서 해시코드를 생성한다.
+        객체마다 다른 정수값을 리턴한다.
+
+    자바는 두 객체가 동등함을 비교할때, hashcode() + equals()메소드를 같이 사용하여 검증한다.
+        hashcode() + equals()
+
+
+    - String toString()
