@@ -1,7 +1,7 @@
 package day6.api;
 
 
-public class Member {
+public class Member{
     String id;
     String name;
 
