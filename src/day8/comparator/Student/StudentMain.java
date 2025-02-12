@@ -9,10 +9,19 @@ public class StudentMain extends StudentData{
 
         List<Student> studentList = StudentData.loadStudent();
 
+
+//        //등수 매기기
+//        Student.assignRanks(studentList);
+
+        System.out.println("정렬 전 성적");
+        StudentUtil.studentprint(studentList);
+
         //등수 매기기
         Student.assignRanks(studentList);
+
         //출력
-        StudentUtil.studentprint(studentList);
+        System.out.println("정렬 후 성적");
+        StudentUtil.studentassignprint(studentList);
     }
 }
 
