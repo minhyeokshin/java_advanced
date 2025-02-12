@@ -1,0 +1,9 @@
+Collection 인터페이스의 최상위 인터페이스 Iterable
+    - default void forEach(Consumer<? super T> action) : 함수형 프로그래밍 전용 루프 메서드
+    - Iterator <T> iterator() : 컬렉션에서 이터레이터를 구현
+    - default Spliterator<T> spliterator() : 파이프라이닝(연결) 관련 메소드
+
+Map 인터페이스 Stream을 사용하거나 간접적으로 키를 Collection으로 반환하여 루프문으로 순회하는 식을 사용
+
+결론 : List, Set , Queue 에 상속을 하는 실제적인 최상위 컬렉션 타입
+    upcasting 으로 다양한 종류의 컬렉션 자료형을 받아 데이터를 삽입, 삭제, 탐색 기능을 처리할 수 있다.
