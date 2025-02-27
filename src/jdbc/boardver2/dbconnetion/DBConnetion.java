@@ -1,5 +1,7 @@
 package jdbc.boardver2.dbconnetion;
 
+import jdbc.boardver2.boardenum.boardenum;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,11 +10,13 @@ import java.util.Scanner;
 import static jdbc.boardver2.boardenum.boardenum.*;
 
 public class DBConnetion {
+    static int loginerror = 3;
 
     public static Connection dbconnection() {
         String URL = "jdbc:mysql://localhost:3306/ssgdb?serverTimeZone=Asia/Seoul";
         String id;
         String pw;
+
 
         System.out.println(runboard.getText());
         System.out.println(login.getText());
@@ -31,11 +35,19 @@ public class DBConnetion {
             // 2. Mysql DB에 연결객체를 얻어와서 연결하기
             connection = DriverManager.getConnection(URL, id, pw);
             System.out.println("Connection OK" + connection);
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println(loginerror.getText());
-            System.out.println(systemexit.getText());
+        } catch (ClassNotFoundException e) {
+            System.out.println(loginerrorsee.getText());
+            return null;
+        } catch (SQLException e) {
+            loginerror--;
+            if (loginerror > 0) {
+                System.out.println(logincount.getText() + loginerror);
+                dbconnection();
+            } else System.out.println(systemexit.getText());
             System.exit(0);
         }
+
+
         return connection;
     }
 
@@ -61,12 +73,20 @@ public class DBConnetion {
             // 2. Mysql DB에 연결객체를 얻어와서 연결하기
             connection = DriverManager.getConnection(URL, id, pw);
             System.out.println("Connection OK" + connection);
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println(loginerror.getText());
-            System.out.println(systemexit.getText());
+        } catch (ClassNotFoundException e) {
+            System.out.println(loginerrorsee.getText());
+            return null;
+        } catch (SQLException e) {
+            loginerror--;
+            if (loginerror > 0) {
+                System.out.println(logincount.getText() + loginerror);
+                dbconnection();
+            } else System.out.println(systemexit.getText());
             System.exit(0);
         }
+
         return connection;
     }
-
 }
+
+

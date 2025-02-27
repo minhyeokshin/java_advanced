@@ -21,12 +21,13 @@ public enum boardenum {
     inputid("ID 입력 : "),
     inputpw("PW 입력 : "),
     changelogin("로그인 정보를 변경합니다."),
-    loginerror("로그인 정보가 올바르지 않습니다."),
+    loginerrorsee("로그인 정보가 올바르지 않습니다."),
     systemexit("프로그랩을 종료합니다."),
     boardprogram("게시판 프로그램"),
     controlline("===================================="),
     controlchoice("1.입력\t2.검색\t3.수정\t4.삭제\t5.종료\t6.사용자변경(재 로그인)"),
-    controlinput("입력 : ");
+    controlinput("입력 : "),
+    logincount("로그인 실패, 남은 횟수 : ");
 
     private final String message;
 
