@@ -53,9 +53,9 @@ public class boardController implements boardControl{
 
         Scanner in = new Scanner(System.in);
         while (true) {
-            System.out.println("게시파 프로그램");
+            System.out.println("게시판 프로그램");
             System.out.println("====================================");
-            System.out.println("1.입력\t2.검색\t3.수정\t4.삭제\t5.종료");
+            System.out.println("1.입력\t2.검색\t3.수정\t4.삭제\t5.종료\t6.사용자변경(재 로그인)");
             System.out.printf("입력 : ");
             choice = in.nextInt();
             in.nextLine();
@@ -75,6 +75,8 @@ public class boardController implements boardControl{
                 case 5:
                     System.out.println("프로그램을 종료합니다.");
                     System.exit(0);
+                case 6:
+                    connection = DBConnetion.userchange();
                 default:
                     break;
             }
