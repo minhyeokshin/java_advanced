@@ -12,6 +12,8 @@ public class DBConnetion {
         String id;
         String pw;
 
+        System.out.println("게시판 프로그램을 실행합니다.");
+        System.out.println("로그인을 합니다.");
         Scanner in = new Scanner(System.in);
         System.out.printf("id 입력 : ");
         id = in.nextLine();

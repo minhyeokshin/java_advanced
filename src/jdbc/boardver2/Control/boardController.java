@@ -11,17 +11,19 @@ import java.util.Scanner;
 
 public class boardController implements boardControl{
 
+    private Connection connection;
     private boardInsert boardInsert;
-    private jdbc.boardver2.boardSelect boardSelect;
+    private boardSelect boardSelect;
     private boardDelete boarddelete;
     private boardUpdate boardupdate;
 
 
     public boardController() {
-        this.boardInsert = new boardInsert();
-        this.boardSelect = new boardSelect();
-        this.boarddelete = new boardDelete();
-        this.boardupdate = new boardUpdate();
+        this.connection = DBConnetion.dbconnection();
+        this.boardInsert = new boardInsert(connection);
+        this.boardSelect = new boardSelect(connection);
+        this.boarddelete = new boardDelete(connection);
+        this.boardupdate = new boardUpdate(connection);
     }
 
 
@@ -51,7 +53,8 @@ public class boardController implements boardControl{
 
         Scanner in = new Scanner(System.in);
         while (true) {
-            System.out.println("게시판을 실행합니다.");
+            System.out.println("게시파 프로그램");
+            System.out.println("====================================");
             System.out.println("1.입력\t2.검색\t3.수정\t4.삭제\t5.종료");
             System.out.printf("입력 : ");
             choice = in.nextInt();

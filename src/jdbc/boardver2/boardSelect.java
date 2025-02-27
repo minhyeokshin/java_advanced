@@ -8,10 +8,15 @@ import java.util.Scanner;
 
 public class boardSelect {
 
+    private Connection connection;
+
+    public boardSelect(Connection connection) {
+        this.connection = connection;
+    }
+
     public void select() {
         Scanner in = new Scanner(System.in);
-        DBConnetion dbConnetion = new DBConnetion();
-        Connection connection = DBConnetion.dbconnection();
+
         int choice = 0;
         ResultSet rs  = null;
         try {
@@ -46,6 +51,7 @@ public class boardSelect {
                     }
                     pstmt.close();
                     break;
+
                 case 2:
                     String query2 = new StringBuilder()
                             .append(" SELECT * FROM boards ")
@@ -69,7 +75,7 @@ public class boardSelect {
                         board.setBwriter(rs.getString("bwriter"));
                         board.setBdate(rs.getDate("bdate"));
                         board.setBfilename(rs.getString("bfilename"));
-                        board.setBfiledata(rs.getBlob("bfiledata").toString());
+                        board.setBfiledata(rs.getBlob("bfiledata").getBinaryStream().toString());
                         System.out.println(board);
 
 
@@ -86,16 +92,17 @@ public class boardSelect {
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                    System.out.println("connection closed");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-            }
         }
+//        finally {
+//            if (connection != null) {
+//                try {
+//                    connection.close();
+//                    System.out.println("connection closed");
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        }
     }
 }

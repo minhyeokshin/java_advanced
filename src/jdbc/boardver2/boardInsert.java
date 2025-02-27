@@ -9,11 +9,14 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class boardInsert {
+
+    private Connection connection;
+
+    public boardInsert(Connection connection) {
+        this.connection = connection;
+    }
     public void insert() {
         Scanner in = new Scanner(System.in);
-
-        DBConnetion dbConnetion = new DBConnetion();
-        Connection connection = DBConnetion.dbconnection();
 
         try {
             //3. 매개변수화된 SQL 문 작성
@@ -59,17 +62,18 @@ public class boardInsert {
             throw new RuntimeException(e);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                    System.out.println("connection closed");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-            }
         }
+//        finally {
+//            if (connection != null) {
+//                try {
+//                    connection.close();
+//                    System.out.println("connection closed");
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        }
     }
 
 }

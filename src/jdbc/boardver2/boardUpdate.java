@@ -8,13 +8,16 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class boardUpdate {
+    private Connection connection;
+
+    public boardUpdate (Connection connection) {
+        this.connection = connection;
+    }
+
     public void update() {
         Scanner in = new Scanner(System.in);
-        DBConnetion dbConnetion = new DBConnetion();
-        Connection connection = DBConnetion.dbconnection();
 
         try {
-            ;
 
             //3. 매개변수화된 SQL 문 작성
 
@@ -39,16 +42,17 @@ public class boardUpdate {
 
         }  catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                    System.out.println("connection closed");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-
-            }
         }
+//        finally {
+//            if (connection != null) {
+//                try {
+//                    connection.close();
+//                    System.out.println("connection closed");
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        }
     }
 }
