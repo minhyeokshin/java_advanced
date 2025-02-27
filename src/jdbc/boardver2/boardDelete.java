@@ -1,13 +1,11 @@
 package jdbc.boardver2;
 
-import jdbc.boardver2.DBconnetion.DBConnetion;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import static jdbc.boardver2.boardenum.deleteboard;
+import static jdbc.boardver2.boardenum.boardenum.deleteboard;
 
 public class boardDelete {
 

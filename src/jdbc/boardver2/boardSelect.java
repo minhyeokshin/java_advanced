@@ -1,12 +1,11 @@
 package jdbc.boardver2;
 
 import jdbc.board.board;
-import jdbc.boardver2.DBconnetion.DBConnetion;
 
 import java.sql.*;
 import java.util.Scanner;
 
-import static jdbc.boardver2.boardenum.*;
+import static jdbc.boardver2.boardenum.boardenum.*;
 
 public class boardSelect {
 

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-import static jdbc.boardver2.boardenum.*;
+import static jdbc.boardver2.boardenum.boardenum.*;
 
 public class DBConnetion {
 

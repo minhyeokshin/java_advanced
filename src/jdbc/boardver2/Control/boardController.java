@@ -9,7 +9,7 @@ import jdbc.boardver2.boardUpdate;
 import java.sql.Connection;
 import java.util.Scanner;
 
-import static jdbc.boardver2.boardenum.*;
+import static jdbc.boardver2.boardenum.boardenum.*;
 
 public class boardController implements boardControl{
 

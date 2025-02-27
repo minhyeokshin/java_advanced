@@ -1,14 +1,12 @@
 package jdbc.boardver2;
 
 
-import jdbc.boardver2.DBconnetion.DBConnetion;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.Scanner;
 
-import static jdbc.boardver2.boardenum.*;
+import static jdbc.boardver2.boardenum.boardenum.*;
 
 public class boardInsert {
 
