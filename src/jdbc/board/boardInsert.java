@@ -35,9 +35,11 @@ public class boardInsert {
             System.out.printf("작성자 입력 : ");
             pstmt.setString(3,in.nextLine());
             System.out.printf("이미지 파일 명 입력 : ");
-            pstmt.setString(4,in.nextLine());
+            String image = in.nextLine();
+            pstmt.setString(4,image);
+            System.out.println("입력 예시 : src/jdbc/image");
             System.out.printf("이미지 경로 입력 : ");
-            pstmt.setBlob(5, new FileInputStream(in.nextLine()));
+            pstmt.setBlob(5,new FileInputStream(in.nextLine()+"/"+image));
 
 
             //4. SQL문 실행
