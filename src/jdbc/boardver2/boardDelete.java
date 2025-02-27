@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import static jdbc.boardver2.boardenum.deleteboard;
+
 public class boardDelete {
 
     private Connection connection;
@@ -28,7 +30,7 @@ public class boardDelete {
 
 
             PreparedStatement pstmt = connection.prepareStatement(query);
-            System.out.printf("삭제할 게시판 번호 입력 : ");
+            System.out.printf(deleteboard.getText());
             pstmt.setInt(1, in.nextInt());
             in.nextLine();
 

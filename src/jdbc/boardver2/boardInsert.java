@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.Scanner;
 
+import static jdbc.boardver2.boardenum.*;
+
 public class boardInsert {
 
     private Connection connection;
@@ -26,17 +28,17 @@ public class boardInsert {
 
             PreparedStatement pstmt = connection.prepareStatement(query , Statement.RETURN_GENERATED_KEYS);
 
-            System.out.printf("제목 입력 : ");
+            System.out.printf(inserttile.getText());
             pstmt.setString(1, in.nextLine());
-            System.out.printf("내용 입력 : ");
+            System.out.printf(insertcontent.getText());
             pstmt.setString(2,in.nextLine());
-            System.out.printf("작성자 입력 : ");
+            System.out.printf(insertwriter.getText());
             pstmt.setString(3,in.nextLine());
-            System.out.printf("이미지 파일 명 입력 : ");
+            System.out.printf(insertfilename.getText());
             String image = in.nextLine();
             pstmt.setString(4,image);
-            System.out.println("입력 예시 : src/jdbc/image");
-            System.out.printf("이미지 경로 입력 : ");
+            System.out.println(insertfileinputex.getText());
+            System.out.printf(insertfileinput.getText());
             pstmt.setBlob(5,new FileInputStream(in.nextLine()+"/"+image));
 
 

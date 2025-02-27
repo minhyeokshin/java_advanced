@@ -9,6 +9,8 @@ import jdbc.boardver2.boardUpdate;
 import java.sql.Connection;
 import java.util.Scanner;
 
+import static jdbc.boardver2.boardenum.*;
+
 public class boardController implements boardControl{
 
     private Connection connection;
@@ -53,10 +55,10 @@ public class boardController implements boardControl{
 
         Scanner in = new Scanner(System.in);
         while (true) {
-            System.out.println("게시판 프로그램");
-            System.out.println("====================================");
-            System.out.println("1.입력\t2.검색\t3.수정\t4.삭제\t5.종료\t6.사용자변경(재 로그인)");
-            System.out.printf("입력 : ");
+            System.out.println(boardprogram.getText());
+            System.out.println(controlline.getText());
+            System.out.println(controlchoice.getText());
+            System.out.printf(controlinput.getText());
             choice = in.nextInt();
             in.nextLine();
             switch (choice) {
@@ -73,7 +75,7 @@ public class boardController implements boardControl{
                     delete();
                     break;
                 case 5:
-                    System.out.println("프로그램을 종료합니다.");
+                    System.out.println(systemexit.getText());
                     System.exit(0);
                 case 6:
                     connection = DBConnetion.userchange();

@@ -6,6 +6,8 @@ import jdbc.boardver2.DBconnetion.DBConnetion;
 import java.sql.*;
 import java.util.Scanner;
 
+import static jdbc.boardver2.boardenum.*;
+
 public class boardSelect {
 
     private Connection connection;
@@ -22,8 +24,8 @@ public class boardSelect {
         try {
 
             //3. 매개변수화된 SQL 문 작성
-                        System.out.println("1. 전체 검색\t2.선택 검색");
-            System.out.printf("입력 : ");
+            System.out.println(selectchoice.getText());
+            System.out.printf(selectinput.getText());
             choice = in.nextInt();
             in.nextLine();
             switch (choice){
@@ -60,7 +62,7 @@ public class boardSelect {
 
 
                     PreparedStatement pstmt2 = connection.prepareStatement(query2);
-                    System.out.printf("검색할 글의 번호를 입력하세요 : ");
+                    System.out.printf(selectbno.getText());
                     pstmt2.setInt(1,in.nextInt());
                     in.nextLine();
 
@@ -81,12 +83,12 @@ public class boardSelect {
 
                     } else {
 
-                        System.out.println("없는 글입니다.");
+                        System.out.println(selecterror.getText());
                     }
                     pstmt2.close();
                     break;
                 default:
-                    System.out.println("선택 오류 프로그램을 종료합니다.");
+                    System.out.println(choiceerror.getText());
                     break;
             }
 

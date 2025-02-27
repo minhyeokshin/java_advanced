@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import static jdbc.boardver2.boardenum.*;
+
 public class boardUpdate {
     private Connection connection;
 
@@ -28,10 +30,10 @@ public class boardUpdate {
 
 
             PreparedStatement pstmt = connection.prepareStatement(query);
-            System.out.printf("바꿀 게시판 번호 입력 : ");
+            System.out.printf(updatebno.getText());
             pstmt.setInt(2, in.nextInt());
             in.nextLine();
-            System.out.printf("게시판 내용 변경 : ");
+            System.out.printf(updatecontent.getText());
             pstmt.setString(1, in.nextLine());
 
             //4. SQL문 실행

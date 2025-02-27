@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import static jdbc.boardver2.boardenum.*;
+
 public class DBConnetion {
 
     public static Connection dbconnection() {
@@ -12,12 +14,12 @@ public class DBConnetion {
         String id;
         String pw;
 
-        System.out.println("게시판 프로그램을 실행합니다.");
-        System.out.println("로그인을 합니다.");
+        System.out.println(runboard.getText());
+        System.out.println(login.getText());
         Scanner in = new Scanner(System.in);
-        System.out.printf("id 입력 : ");
+        System.out.printf(inputid.getText());
         id = in.nextLine();
-        System.out.printf("pw 입력 : ");
+        System.out.printf(inputpw.getText());
         pw = in.nextLine();
 
         Connection connection = null;
@@ -30,8 +32,8 @@ public class DBConnetion {
             connection = DriverManager.getConnection(URL, id, pw);
             System.out.println("Connection OK" + connection);
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("로그인 정보가 올바르지 않습니다.");
-            System.out.println("프로그램을 종료합니다.");
+            System.out.println(loginerror.getText());
+            System.out.println(systemexit.getText());
             System.exit(0);
         }
         return connection;
@@ -42,12 +44,12 @@ public class DBConnetion {
         String id;
         String pw;
 
-        System.out.println("로그인 정보를 변경합니다.");
-        System.out.println("로그인을 합니다.");
+        System.out.println(changelogin.getText());
+        System.out.println(login.getText());
         Scanner in = new Scanner(System.in);
-        System.out.printf("id 입력 : ");
+        System.out.printf(inputid.getText());
         id = in.nextLine();
-        System.out.printf("pw 입력 : ");
+        System.out.printf(inputpw.getText());
         pw = in.nextLine();
 
         Connection connection = null;
@@ -60,8 +62,8 @@ public class DBConnetion {
             connection = DriverManager.getConnection(URL, id, pw);
             System.out.println("Connection OK" + connection);
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("로그인 정보가 올바르지 않습니다.");
-            System.out.println("프로그램을 종료합니다.");
+            System.out.println(loginerror.getText());
+            System.out.println(systemexit.getText());
             System.exit(0);
         }
         return connection;
