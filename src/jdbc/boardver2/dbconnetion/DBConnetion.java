@@ -1,4 +1,4 @@
-package jdbc.boardver2.DBconnetion;
+package jdbc.boardver2.dbconnetion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

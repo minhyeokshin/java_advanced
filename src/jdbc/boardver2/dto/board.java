@@ -1,4 +1,4 @@
-package jdbc.boardver2;
+package jdbc.boardver2.dto;
 
 import lombok.Data;
 

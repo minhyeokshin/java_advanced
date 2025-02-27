@@ -1,4 +1,4 @@
-package jdbc.boardver2.Control;
+package jdbc.boardver2.control;
 
 public interface boardControl {
     void insert();

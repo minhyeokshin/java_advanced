@@ -1,4 +1,4 @@
-package jdbc.boardver2;
+package jdbc.boardver2.service;
 
 
 import java.io.FileInputStream;

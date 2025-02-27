@@ -1,10 +1,10 @@
-package jdbc.boardver2.Control;
+package jdbc.boardver2.control;
 
-import jdbc.boardver2.DBconnetion.DBConnetion;
-import jdbc.boardver2.boardDelete;
-import jdbc.boardver2.boardInsert;
-import jdbc.boardver2.boardSelect;
-import jdbc.boardver2.boardUpdate;
+import jdbc.boardver2.dbconnetion.DBConnetion;
+import jdbc.boardver2.service.boardDelete;
+import jdbc.boardver2.service.boardInsert;
+import jdbc.boardver2.service.boardSelect;
+import jdbc.boardver2.service.boardUpdate;
 
 import java.sql.Connection;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package jdbc.boardver2;
+package jdbc.boardver2.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
