@@ -43,16 +43,6 @@ public class boardUpdate {
         }  catch (SQLException e) {
             throw new RuntimeException(e);
         }
-//        finally {
-//            if (connection != null) {
-//                try {
-//                    connection.close();
-//                    System.out.println("connection closed");
-//                } catch (SQLException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        }
+
     }
 }
