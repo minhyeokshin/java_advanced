@@ -1,5 +1,6 @@
 package jdbc;
 
+import jdbc.users.User;
 import lombok.Data;
 
 import java.sql.*;

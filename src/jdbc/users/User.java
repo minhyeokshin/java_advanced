@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.users;
 
 import lombok.Data;
 
@@ -11,4 +11,6 @@ public class User {
     String userpassword;
     int userage;
     String useremail;
+    String userTel;
+    String useraddr;
 }
